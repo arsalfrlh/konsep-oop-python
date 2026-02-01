@@ -6,7 +6,7 @@ import time
 class Midtrans:
     order_id = f"Order-{int(time.time())}"
     baseUrl = "https://api.sandbox.midtrans.com/v2/charge"
-    serverKey = b64encode(f"SB-Mid-server-6GJKV_t1Uh5PpGxjx-JZkPk_:".encode()).decode()
+    serverKey = b64encode(f"YOUR_SERVER_KEY".encode()).decode()
     def __init__(self, nama, email, jumlah, harga, payment_type, payment_chanel):
         self.nama = nama
         self.email = email
@@ -99,4 +99,5 @@ else:
     payment_chanel = 3
     
 midtrans = Midtrans(nama, email, jumlah, harga, payment_type, payment_chanel)
+
 midtrans.payment()
